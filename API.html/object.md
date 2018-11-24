@@ -20,12 +20,14 @@
 deltatime可以让游戏物体匀速运动，不受帧数影响
 ```c#
 transform.Translate(Vector3.forward*Time.deltaTime);
-```c#
+
 timescale可以更改deltatime的速率
-```
+
 Time.timeScale = 2;//改变Time.deltaTime的速率，默认是1
-```c#
+
 realTimeSinceStartup可以记录游戏运行的时间，也可以测量某一段代码运行时间
+```
+
 ```C#
 
 float time1 = Time.realtimeSinceStartup;//记录当前时间
@@ -46,7 +48,8 @@ void Start () {//三种创建游戏物体的方式
 }
 ```
 ## 通过代码给游戏物体添加组件
-```
+
+```c#
 game.AddComponent<Rigidbody>();//给游戏物体添加组件
 ```
 ## 禁用和激活游戏物体

@@ -125,5 +125,65 @@ GameObject.SendMessageUpawards 调用该游戏物体以及他的父物体的某�
 ```c#
 game.SendMessageUpawards("Attake", 5, SendMessageOptions.DontRequireReceiver);//调用该游戏物体的"Attake"方法
 ```
-
+## 得到组件的各种方法函数
+* GetComponent 查找该游戏物体的一个某种组件
+* GetComponentInChildren 查找该游戏物体以及其子物体的一个某种组件
+* GetComponentInParent 查找查找该游戏物体以及其父物体的一个某种组件
+* GetComponent 查找该游戏物体所有某种组件
+* GetComponentInChildren 查找该游戏物体以及其子物体的所有某种组件
+* GetComponentInParent 查找查找该游戏物体以及其父物体的所有某种组件
+## MonoBehaviour总览
+* ExecuteInEditMode 可以让放在后面的代码在编译器模式下面运行。
+```C#
+using UnityEngine;
+[ExecuteInEditMode]
+public class API05 : MonoBehaviour {
+	void Start () {
+        print(123);
+	}
+	void Update () {
+        print(234);
+	}
+}
+```
+* Inoke 延迟时间调用函数
+* InvokeRepeating 延迟时间重复调用函数
+* CancelInvoke 结束调用所有Invoke和InvokeRepeating方法
+* print 输出，适用于测试bug
+* isActiveAndEnabled 用于判断当前组件是否启用
+* enabled 用于激活或者禁用某个组件
+## MonoBehaviour里面的常用变量
+* tag 游戏物体的标签
+* gameObject 获取游戏物体
+* transform 获取游戏物体的transform组件（每个游戏物体都有一个transform组件）
+* name 获取游戏物体的名字
+## MonoBehaviour中Invoke的使用
+* Inoke 延迟时间调用函数
+* InvokeRepeating 延迟时间重复调用函数
+* CancelInvoke 结束调用所有Invoke和InvokeRepeating方法
+```C#
+public class API05 : MonoBehaviour {
+    int i = 0;
+	void Start () {
+	}
+	void Update () {
+        //Invoke("Fire", 1.0f);
+        Invoke("Fire",1.0f);//第一个参数，方法名。第二个参数，延迟时间。
+        InvokeRepeating("Firee", 1.0f, 2);//第一个参数，方法名。第二个参数，延迟时间。第三个参数，重复执行间隔
+        if (i > 10)
+        {
+            CancelInvoke();//结束调用所有Invoke和InvokeRepeating方法
+        }
+    }
+    void Fire()
+    {
+        print(123);
+    }
+    void Firee()
+    {
+        print(456);
+        i++;
+    }
+}
+```
 # 如果哪里有问题，欢迎指教

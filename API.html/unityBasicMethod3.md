@@ -5,7 +5,7 @@
 ### Input里面的GetKeyXXX的使用
 * GetKey 键盘按键处于被按下状态时调用
 * GetKeyDown 键盘按键被按下
-* GetKeyUp 键盘按键被抬起
+* GetKeyUp 键盘按键被抬起 
 
 ```C#
 if (Input.GetKey(KeyCode.Space))//检测空格键是否处于被按下状态

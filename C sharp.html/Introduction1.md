@@ -176,7 +176,7 @@ static void Main(string[] args)
     Console.ReadKey();
 }
 ```
-## 布尔运算符
+## 布尔运算符 
 ```C#
 static void Main(string[] args)
 {

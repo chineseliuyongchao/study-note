@@ -35,7 +35,7 @@ class Program
         }
         return num1;
     }
-    static void Main(string[] args)
+    static void Main(string[] args) 
     {
         int[] a = { 123, 43, 23, 23455, 2, 1324, 23, 2367, 5667, 67 };
         int b = max(a);
